@@ -10,6 +10,8 @@ services:
     logging:
       driver: "none"
     restart: unless-stopped
+    ports:
+      - "5432:5432"
     volumes:
       - db-data:/var/lib/postgresql/data
 
@@ -26,7 +28,7 @@ services:
       DB_NAME: wiki
     restart: unless-stopped
     ports:
-      - "80:3000"
+      - "3000:3000"
 
 volumes:
   db-data:
